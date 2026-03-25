@@ -1,0 +1,17 @@
+User-Agent: *
+Disallow: /page57883383.html
+Disallow: /footer
+Disallow: /page59449531.html
+Disallow: /fehler
+Disallow: /tilda/form*
+Disallow: /tilda/rec*
+Disallow: /tilda/click*
+Disallow: /tilda/scroll*
+Disallow: /tilda/popup*
+Disallow: /tilda/cart*
+Disallow: /tilda/product*
+Disallow: /tilda/event*
+Disallow:
+
+
+Sitemap: https://wamocon.com/sitemap.xml
