@@ -3,89 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WAMOCON GmbH - Pages Index</title>
+    <title>WAMOCON Home</title>
     <style>
+      html,
       body {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.4;
-        margin: 24px;
-        color: #111;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
       }
-      code {
-        background: #f4f4f4;
-        padding: 2px 6px;
-        border-radius: 6px;
-      }
-      a {
-        color: #0b57d0;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 10px 18px;
-        margin-top: 14px;
-      }
-      .card {
-        border: 1px solid #e6e6e6;
-        border-radius: 12px;
-        padding: 12px 14px;
-        background: #fff;
-      }
-      .muted {
-        color: #555;
+      iframe {
+        border: 0;
+        width: 100vw;
+        height: 100vh;
+        display: block;
       }
     </style>
   </head>
   <body>
-    <h1>WAMOCON GmbH</h1>
-    <p class="muted">
-      This repository contains a static export of the website pages.
-      Use this index to open every exported <code>page*.html</code> file.
-    </p>
-
-    <p>
-      Online reference (original website):
-      <a href="https://wamocon.com" target="_blank" rel="noreferrer noopener">https://wamocon.com</a>
-    </p>
-
-    <h2>Exported pages</h2>
-    <div class="grid" role="list">
-      <div class="card" role="listitem"><a href="./page54483969.html">page54483969.html</a></div>
-      <div class="card" role="listitem"><a href="./page57475469.html">page57475469.html</a></div>
-      <div class="card" role="listitem"><a href="./page57489943.html">page57489943.html</a></div>
-      <div class="card" role="listitem"><a href="./page57822475.html">page57822475.html</a></div>
-      <div class="card" role="listitem"><a href="./page57874143.html">page57874143.html</a></div>
-      <div class="card" role="listitem"><a href="./page57876515.html">page57876515.html</a></div>
-      <div class="card" role="listitem"><a href="./page57882423.html">page57882423.html</a></div>
-      <div class="card" role="listitem"><a href="./page57883383.html">page57883383.html</a></div>
-      <div class="card" role="listitem"><a href="./page59102217.html">page59102217.html</a></div>
-      <div class="card" role="listitem"><a href="./page59115815.html">page59115815.html</a></div>
-      <div class="card" role="listitem"><a href="./page59159537.html">page59159537.html</a></div>
-      <div class="card" role="listitem"><a href="./page59160115.html">page59160115.html</a></div>
-      <div class="card" role="listitem"><a href="./page59165009.html">page59165009.html</a></div>
-      <div class="card" role="listitem"><a href="./page59165443.html">page59165443.html</a></div>
-      <div class="card" role="listitem"><a href="./page59169775.html">page59169775.html</a></div>
-      <div class="card" role="listitem"><a href="./page59449531.html">page59449531.html</a></div>
-      <div class="card" role="listitem"><a href="./page59449639.html">page59449639.html</a></div>
-      <div class="card" role="listitem"><a href="./page59449779.html">page59449779.html</a></div>
-      <div class="card" role="listitem"><a href="./page59452125.html">page59452125.html</a></div>
-      <div class="card" role="listitem"><a href="./page59452361.html">page59452361.html</a></div>
-      <div class="card" role="listitem"><a href="./page61093859.html">page61093859.html</a></div>
-      <div class="card" role="listitem"><a href="./page61094143.html">page61094143.html</a></div>
-      <div class="card" role="listitem"><a href="./page64750211.html">page64750211.html</a></div>
-      <div class="card" role="listitem"><a href="./page69503661.html">page69503661.html</a></div>
-      <div class="card" role="listitem"><a href="./page70444849.html">page70444849.html</a></div>
-      <div class="card" role="listitem"><a href="./404.html">404.html</a></div>
-    </div>
-
-    <p class="muted" style="margin-top: 24px;">
-      Tip: If you want to reproduce the exact pretty routes (e.g. <code>/azubifae</code>),
-      you may need server-side rewrites or redirects. This index is only for browsing
-      the exported HTML files.
-    </p>
+    <!--
+      Root index must behave like the original homepage (no overview list).
+      The actual Tilda export is served inside the iframe.
+    -->
+    <iframe src="/page54483969.html" loading="eager" referrerpolicy="no-referrer"></iframe>
   </body>
 </html>
