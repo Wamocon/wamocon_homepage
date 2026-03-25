@@ -1,0 +1,42 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/uber-wamocon",                "destination": "/page57475469.html" },
+    { "source": "/kundenstimmen",               "destination": "/page57489943.html" },
+    { "source": "/karriere",                    "destination": "/page57822475.html" },
+    { "source": "/360-booster-system",          "destination": "/page57874143.html" },
+    { "source": "/zusammenarbeit",              "destination": "/page57876515.html" },
+    { "source": "/kontakte",                    "destination": "/page57882423.html" },
+    { "source": "/footer",                      "destination": "/page57883383.html" },
+    { "source": "/en",                          "destination": "/page59102217.html" },
+    { "source": "/about-wamocon",               "destination": "/page59115815.html" },
+    { "source": "/customer-testimonials",       "destination": "/page59159537.html" },
+    { "source": "/career",                      "destination": "/page59160115.html" },
+    { "source": "/the-360-booster-system",      "destination": "/page59165009.html" },
+    { "source": "/cooperation-with-universities","destination": "/page59165443.html" },
+    { "source": "/contacts",                    "destination": "/page59169775.html" },
+    { "source": "/fehler",                      "destination": "/page59449531.html" },
+    { "source": "/danke",                       "destination": "/page59449639.html" },
+    { "source": "/thanks",                      "destination": "/page59449779.html" },
+    { "source": "/datenschutz",                 "destination": "/page59452125.html" },
+    { "source": "/privacy-policy",              "destination": "/page59452361.html" },
+    { "source": "/impressum",                   "destination": "/page61093859.html" },
+    { "source": "/imprint",                     "destination": "/page61094143.html" },
+    { "source": "/mitarbeiterstimmen",          "destination": "/page64750211.html" },
+    { "source": "/azubifae",                    "destination": "/page69503661.html" }
+  ],
+  "headers": [
+    {
+      "source": "/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}
