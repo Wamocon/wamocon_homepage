@@ -4177,7 +4177,7 @@
                     data-field-width-res-640-value="391" data-field-container-res-640-value="grid"
                     data-field-top-res-960-value="555" data-field-left-res-960-value="510"
                     data-field-width-res-960-value="287">
-                    <div class='tn-atom' field='tn_text_1725873169541'>Künstliche Intelligenz</div>
+                    <div class='tn-atom' field='tn_text_1725873169541'>KI (LLM-as-a-Judge)</div>
                 </div>
                 <div class='t396__elem tn-elem tn-elem__7959500361725873169546 t396__elem--anim-hidden'
                     data-elem-id='1725873169546' data-elem-type='text' data-field-top-value="438"
@@ -4250,7 +4250,7 @@
                     data-field-width-res-640-value="466" data-field-container-res-640-value="grid"
                     data-field-top-res-960-value="583" data-field-left-res-960-value="510"
                     data-field-width-res-960-value="342">
-                    <div class='tn-atom' field='tn_text_1725873169555'>WAMOCON setzt auf Laaj (LLM-as-a-Judge) ein skalierbares Produkt und eine Dienstleistung zur automatisierten Bewertung von KI-Systemen. Laaj bewertet Ausgaben generativer KI konsistent, schnell und nach Ihren Kriterien (Fakten, Stil, Sicherheit). Als Dienstleistung integrieren wir Laaj in Ihre Prozesse und befähigen Ihre Teams. So ersetzen Sie teure manuelle Prüfungen, reduzieren KI-Halluzinationen und schaffen vertrauenswürdige, qualitätsgesicherte KI-Anwendungen.</div>
+                    <div class='tn-atom' field='tn_text_1725873169555'>WAMOCON setzt auf Laaj ein skalierbares Produkt und eine Dienstleistung zur automatisierten Bewertung von KI-Systemen. Laaj bewertet Ausgaben generativer KI konsistent, schnell und nach Ihren Kriterien. Als Dienstleistung integrieren wir Laaj in Ihre Prozesse und befähigen Ihre Teams. So ersetzen Sie teure manuelle Prüfungen, reduzieren KI-Halluzinationen und schaffen vertrauenswürdige, qualitätsgesicherte KI-Anwendungen.</div>
                 </div>
                 <div class='t396__elem tn-elem tn-elem__7959500361732019456798 t396__elem--anim-hidden'
                     data-elem-id='1732019456798' data-elem-type='text' data-field-top-value="0"
@@ -6299,6 +6299,21 @@
                 #rec-360-tour .tour360-open-btn { display: none; }
                 #rec-360-tour .tour360-play-circle { width: 56px; height: 56px; }
             }
+            /* ── Inline 360° viewers ──────────────────────────── */
+            #rec-360-tour #tour360-pano,
+            #rec-360-tour #tour360-iframe {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                border-radius: 14px;
+                overflow: hidden;
+                display: none;
+                z-index: 2;
+                border: 0;
+            }
+            #rec-360-tour #tour360-iframe { width: 100%; height: 100%; }
+            #rec-360-tour .tour360-preview.viewer-active::after { display: none; }
+            #rec-360-tour .tour360-arrow { z-index: 5; }
+            #rec-360-tour .pnlm-container { border-radius: 14px; }
         </style>
         <div class="tour360-inner">
             <div class="tour360-header">
@@ -6306,28 +6321,35 @@
                 <p class="tour360-subtitle">Erkunden Sie unser Büro virtuell – klicken Sie auf die Vorschau, um die interaktive 360° Ansicht zu starten</p>
             </div>
 
-            <!-- Main preview (clickable → opens Google Maps 360° view) -->
-            <a id="tour360-preview-link"
-                href="https://www.google.com/maps/place/WAMOCON+GmbH/@50.1350963,8.5722177,3a,75y,110t/data=!3m8!1e1!3m6!1sCIABIhCUsuS36guijk8hNPuNid7Y!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FABJJf53kp1MsH8AMRfn8_EqozFwBwVnCOZZCeh_2v8RNXd1zPcm7svMcWVQZGFvcDKXvndQDYogSiRJ_YL274LmnuO5F8_vsTdhjXAb4pv_AMmW3ed5mCmB6B3-zhi0LzO7cuUx6DzBga5l-LsoJ%3Dw900-h600-k-no-pi-20-ya348.8465452194214-ro0-fo100!7i11904!8i5952!4m9!3m8!1s0x47bd097e61415ffb:0xa71adb1d3c8614d6!8m2!3d50.1353593!4d8.5721691!10e5!14m1!1BCgIgAQ!16s%2Fg%2F11c4v4n5nw?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
+            <!-- Main preview: click Play → launches inline Pannellum viewer (CIAB) or Maps embed (Street View) -->
+            <div id="tour360-preview-link"
                 class="tour360-preview"
-                aria-label="360° Büro Tour auf Google Maps öffnen">
+                role="button"
+                tabindex="0"
+                aria-label="360° Büro Tour starten"
+                style="cursor:pointer;">
                 <span class="tour360-badge-main">360°</span>
                 <img id="tour360-preview-img"
                     src="https://lh3.googleusercontent.com/gpms-cs-s/ABJJf53kp1MsH8AMRfn8_EqozFwBwVnCOZZCeh_2v8RNXd1zPcm7svMcWVQZGFvcDKXvndQDYogSiRJ_YL274LmnuO5F8_vsTdhjXAb4pv_AMmW3ed5mCmB6B3-zhi0LzO7cuUx6DzBga5l-LsoJ=w1200-h800-k-no"
                     alt="360° Büro Ansicht 1"
                     class="tour360-preview-img">
-                <div class="tour360-play-btn">
+                <div class="tour360-play-btn" id="tour360-play-btn">
                     <div class="tour360-play-circle">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <span class="tour360-play-label">360° Ansicht öffnen &#8599;</span>
+                    <span class="tour360-play-label">360° Tour starten</span>
                 </div>
-                <!-- side arrows (stop propagation to prevent link follow) -->
-                <button class="tour360-arrow tour360-arrow-left" id="tour360-prev" aria-label="Vorherige Ansicht" onclick="event.preventDefault();event.stopPropagation();">&#8592;</button>
-                <button class="tour360-arrow tour360-arrow-right" id="tour360-next" aria-label="Nächste Ansicht" onclick="event.preventDefault();event.stopPropagation();">&#8594;</button>
-            </a>
+                <!-- Pannellum renders here for CIAB office photos -->
+                <div id="tour360-pano"></div>
+                <!-- Maps embed iframe for outdoor Street View panorama -->
+                <iframe id="tour360-iframe"
+                    title="360° Büro Tour"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- side arrows -->
+                <button class="tour360-arrow tour360-arrow-left" id="tour360-prev" aria-label="Vorherige Ansicht" onclick="event.stopPropagation();">&#8592;</button>
+                <button class="tour360-arrow tour360-arrow-right" id="tour360-next" aria-label="Nächste Ansicht" onclick="event.stopPropagation();">&#8594;</button>
+            </div>
 
             <!-- Nav bar -->
             <div class="tour360-nav">
@@ -6449,8 +6471,14 @@
                 ];
 
                 var current = 0;
-                var previewLink = document.getElementById('tour360-preview-link');
+                var activeViewer = null; /* 'pano' | 'iframe' | null */
+                var pannellumViewer = null;
+                var pannellumLoaded = false;
+                var previewContainer = document.getElementById('tour360-preview-link');
                 var previewImg  = document.getElementById('tour360-preview-img');
+                var playBtn     = document.getElementById('tour360-play-btn');
+                var panoDiv     = document.getElementById('tour360-pano');
+                var iframeEl    = document.getElementById('tour360-iframe');
                 var thumbsEl    = document.getElementById('tour360-thumbs');
                 var mapsLink    = document.getElementById('tour360-maps-link');
                 var ctaMain     = document.getElementById('tour360-cta-main');
@@ -6471,18 +6499,127 @@
                     thumbBtns.push(btn);
                 });
 
+                /* CIAB Business Photos (lh3) are equirectangular panoramas (11904×5952 = 2:1).
+                   Outdoor Street View panos use streetviewpixels CDN and embed via Maps iframe. */
+                function isLh3Photo(v) {
+                    return v.thumb.indexOf('lh3.googleusercontent.com') !== -1;
+                }
+
+                /* Build the full equirectangular URL at half resolution for Pannellum */
+                function getEquirectUrl(thumb) {
+                    var base = thumb.substring(0, thumb.indexOf('=w'));
+                    return base + '=w4096-h2048-k-no';
+                }
+
+                /* Reset preview area to thumbnail+play-button state */
+                function closeViewer() {
+                    if (pannellumViewer) { try { pannellumViewer.destroy(); } catch(e){} pannellumViewer = null; }
+                    activeViewer = null;
+                    panoDiv.style.display = 'none';
+                    iframeEl.style.display = 'none';
+                    iframeEl.src = '';
+                    previewImg.style.display = '';
+                    playBtn.style.display = '';
+                    previewContainer.classList.remove('viewer-active');
+                    previewContainer.style.cursor = 'pointer';
+                }
+
+                /* Dynamically load Pannellum from CDN the first time it is needed */
+                function loadPannellum(cb) {
+                    if (pannellumLoaded) { cb(); return; }
+                    var css = document.createElement('link');
+                    css.rel = 'stylesheet';
+                    css.href = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css';
+                    document.head.appendChild(css);
+                    var js = document.createElement('script');
+                    js.src = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js';
+                    js.onload = function () { pannellumLoaded = true; cb(); };
+                    js.onerror = function () { console.warn('Pannellum CDN failed to load'); };
+                    document.head.appendChild(js);
+                }
+
+                /* Launch Pannellum inline viewer for CIAB equirectangular panoramas */
+                function launchPano(i) {
+                    var url = getEquirectUrl(VIEWS[i].thumb);
+                    loadPannellum(function () {
+                        if (pannellumViewer) { try { pannellumViewer.destroy(); } catch(e){} pannellumViewer = null; }
+                        previewImg.style.display = 'none';
+                        playBtn.style.display = 'none';
+                        iframeEl.style.display = 'none';
+                        panoDiv.innerHTML = ''; /* clear previous content */
+                        panoDiv.style.display = 'block';
+                        previewContainer.classList.add('viewer-active');
+                        previewContainer.style.cursor = 'default';
+                        activeViewer = 'pano';
+                        pannellumViewer = window.pannellum.viewer('tour360-pano', {
+                            type: 'equirectangular',
+                            panorama: url,
+                            autoLoad: true,
+                            hfov: 100,
+                            minHfov: 50,
+                            maxHfov: 120,
+                            showFullscreenCtrl: true,
+                            showZoomCtrl: true,
+                            mouseZoom: true,
+                            touchPanSpeedCoeffFactor: 1,
+                            friction: 0.15
+                        });
+                    });
+                }
+
+                /* Launch Maps embed iframe for outdoor Street View panoramas */
+                function launchIframe(i) {
+                    if (pannellumViewer) { try { pannellumViewer.destroy(); } catch(e){} pannellumViewer = null; }
+                    panoDiv.style.display = 'none';
+                    previewImg.style.display = 'none';
+                    playBtn.style.display = 'none';
+                    iframeEl.src = VIEWS[i].embed;
+                    iframeEl.style.display = 'block';
+                    previewContainer.classList.add('viewer-active');
+                    previewContainer.style.cursor = 'default';
+                    activeViewer = 'iframe';
+                }
+
+                /* Click/keyboard on preview area starts the appropriate viewer */
+                previewContainer.addEventListener('click', function () {
+                    if (activeViewer) return;
+                    if (isLh3Photo(VIEWS[current])) { launchPano(current); }
+                    else { launchIframe(current); }
+                });
+                previewContainer.addEventListener('keydown', function (e) {
+                    if (activeViewer) return;
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (isLh3Photo(VIEWS[current])) { launchPano(current); }
+                        else { launchIframe(current); }
+                    }
+                });
+
                 function setView(i) {
                     current = i;
                     var v = VIEWS[i];
-                    /* swap the big preview image (use high-res thumbnail) */
+                    /* Update the static thumbnail in the background */
                     previewImg.src = v.thumb.replace('=w400-h267-k-no', '=w1200-h800-k-no');
                     previewImg.alt = v.label;
-                    /* update all links */
-                    previewLink.href = v.link;
-                    mapsLink.href    = v.link;
+                    /* If a viewer is active, switch it to the new view */
+                    if (activeViewer) {
+                        if (isLh3Photo(v)) {
+                            if (activeViewer === 'iframe') {
+                                iframeEl.style.display = 'none'; iframeEl.src = '';
+                            }
+                            launchPano(i);
+                        } else {
+                            if (activeViewer === 'pano') {
+                                panoDiv.style.display = 'none';
+                            }
+                            launchIframe(i);
+                        }
+                    }
+                    /* Update external links */
+                    mapsLink.href = v.link;
                     if (ctaMain) ctaMain.href = v.link;
                     curEl.textContent = i + 1;
-                    /* active thumbnail */
+                    /* Active thumbnail highlight */
                     thumbBtns.forEach(function (b, idx) {
                         b.classList.toggle('is-active', idx === i);
                     });
@@ -6490,15 +6627,15 @@
                 }
 
                 document.getElementById('tour360-prev').addEventListener('click', function (e) {
-                    e.preventDefault(); e.stopPropagation();
+                    e.stopPropagation();
                     setView((current - 1 + VIEWS.length) % VIEWS.length);
                 });
                 document.getElementById('tour360-next').addEventListener('click', function (e) {
-                    e.preventDefault(); e.stopPropagation();
+                    e.stopPropagation();
                     setView((current + 1) % VIEWS.length);
                 });
 
-                /* Keyboard navigation when section is focused */
+                /* Keyboard navigation */
                 document.addEventListener('keydown', function (e) {
                     var focused = document.activeElement;
                     if (focused && focused.closest && focused.closest('#rec-360-tour')) {
