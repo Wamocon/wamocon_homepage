@@ -78,6 +78,16 @@ body.t-body,
 #rec822524912 .tn-elem[data-elem-id="1724154836182"] .t-form__inputsbox {
   width: 100% !important;
 }
+/* Fix: Hide tooltip arrow icons on empty error divs below form fields */
+#rec822524912 .t-input-error::after,
+#rec822524912 .t-input-error::before {
+  display: none !important;
+  content: none !important;
+}
+#rec822524912 .t-input-error:empty {
+  display: none !important;
+  height: 0 !important;
+}
 </style>
 <script>
 function wamocon_hideFormIcons(){var f=document.querySelector('#rec822524912 .t-form');if(!f)return;var els=f.querySelectorAll('svg, img, [class*="icon"], [class*="indicator"]');for(var i=0;i<els.length;i++){els[i].style.display='none';els[i].style.visibility='hidden';els[i].style.width='0';els[i].style.height='0';}var groups=f.querySelectorAll('.t-input-group, .t-input-block, .t-checkbox__control, .t-checkbox__control_flex');for(var j=0;j<groups.length;j++){var ch=groups[j].children;for(var k=0;k<ch.length;k++){var tag=ch[k].tagName.toLowerCase();if(tag==='svg'||tag==='img'||(ch[k].className&&typeof ch[k].className==='string'&&(ch[k].className.indexOf('icon')!==-1||ch[k].className.indexOf('indicator')!==-1))){ch[k].style.display='none';ch[k].style.width='0';ch[k].style.height='0';}}}}
@@ -97,7 +107,7 @@ Startseite
 </a> </li> <li class="t228__list_item"
 style="padding:0 15px;"> <a class="t-menu__link-item"
 href="page69503661.html" data-menu-submenu-hook="" data-menu-item-number="2">
-Azubi - FAE
+Azubi - FIAE
 </a> </li> <li class="t228__list_item"
 style="padding:0 15px;"> <a class="t-menu__link-item"
 href="page57475469.html" data-menu-submenu-hook="" data-menu-item-number="3">
@@ -142,7 +152,7 @@ href="index.html" data-menu-submenu-hook="">
 Startseite
 </a> </li> <li class="t282__menu__item"> <a class="t282__menu__link t-heading t-heading_md t-menu__link-item"
 href="page69503661.html" data-menu-submenu-hook="">
-Azubi - FAE
+Azubi - FIAE
 </a> </li> <li class="t282__menu__item"> <a class="t282__menu__link t-heading t-heading_md t-menu__link-item"
 href="page57475469.html" data-menu-submenu-hook="">
 Über uns

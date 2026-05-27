@@ -81,7 +81,7 @@ RewriteRule ^imprint/$ page61094143.html [NC]
 RewriteRule ^mitarbeiterstimmen$ page64750211.html [NC]
 RewriteRule ^mitarbeiterstimmen/$ page64750211.html [NC]
 
-RewriteRule ^azubifae$ page69503661.html [NC]
-RewriteRule ^azubifae/$ page69503661.html [NC]
+RewriteRule ^azubiFIAE$ page69503661.html [NC]
+RewriteRule ^azubiFIAE/$ page69503661.html [NC]
 
 
