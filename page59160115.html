@@ -4153,6 +4153,21 @@
       <script
         type="text/javascript">t_onReady(function () { t_onFuncLoad('t1061_init', function () { t1061_init('833141523'); }); });</script>
       <style>
+        /* Dynamic layout for videos (3 in a row) */
+        @media screen and (min-width: 1201px) {
+          #rec833141523 .t-container_flex > .t-col_6:first-child:nth-last-child(3),
+          #rec833141523 .t-container_flex > .t-col_6:first-child:nth-last-child(3) ~ .t-col_6 {
+            max-width: 360px !important;
+          }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 961px) {
+          #rec833141523 .t-container_flex > .t-col_6:first-child:nth-last-child(3),
+          #rec833141523 .t-container_flex > .t-col_6:first-child:nth-last-child(3) ~ .t-col_6 {
+            max-width: 300px !important;
+          }
+        }
+      </style>
+      <style>
         #rec833141523 .t1061__blockname {
           font-size: 16px;
           line-height: 1.3;
