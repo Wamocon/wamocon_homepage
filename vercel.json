@@ -23,7 +23,8 @@
     { "source": "/impressum",                   "destination": "/page61093859.html" },
     { "source": "/imprint",                     "destination": "/page61094143.html" },
     { "source": "/mitarbeiterstimmen",          "destination": "/page64750211.html" },
-    { "source": "/azubifae",                    "destination": "/page69503661.html" }
+    { "source": "/azubifae",                    "destination": "/page69503661.html" },
+    { "source": "/trainee-fiae",                "destination": "/page70444849.html" }
   ],
   "headers": [
     {
